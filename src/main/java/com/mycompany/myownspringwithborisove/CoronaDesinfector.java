@@ -4,13 +4,15 @@ package com.mycompany.myownspringwithborisove;
 
 public class CoronaDesinfector {
     
+    private Announcer announcer = new ConsoleAnouncer();
+    
+    private Policeman policeman = new PolicemanImpl();
+    
     public void start(Room room){
-        // todo Сообщить всем присутствующим в комнате, 
-        //      о начале дещинфекции, и попросить всех уйти.
-        // todo принудительно выгнать тех, кто сам не ушел.
+        announcer.announce("Всем выйти! Начинается дезинфекия.");
+        policeman.makePeopleLeaveRoom();
         desinfect(room);
-        // todo сообщить всем присутствовашим в комнате, что
-        //      они могут вернуться обратно
+        announcer.announce("Дезинфекция завершена. Комната доступна");
     }
     
     public void desinfect(Room room){
