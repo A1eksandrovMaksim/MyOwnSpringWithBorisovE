@@ -1,5 +1,7 @@
 package com.mycompany.myownspringwithborisove;
 
+import java.util.HashMap;
+import java.util.Map;
 import lombok.SneakyThrows;
 
 
@@ -8,14 +10,15 @@ public class ObjectFactory {
     
     private static ObjectFactory instance = new ObjectFactory();
       
-    private Config config = 
-            new JavaConfig("com.mycompany.myownspringwithborisove");
+    private Config config;
             
     public static ObjectFactory getInstance(){
         return instance;
     }
     
     private ObjectFactory(){
+        config = new JavaConfig("com.mycompany.myownspringwithborisove",
+                new HashMap(Map.of(Policeman.class, PolicemanImpl.class)));
     }
     
     @SneakyThrows
