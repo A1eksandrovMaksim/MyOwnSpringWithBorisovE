@@ -2,12 +2,14 @@ package com.mycompany.myownspringwithborisove;
 
 import java.util.Map;
 import java.util.Set;
+import lombok.Getter;
 import org.reflections.Reflections;
 
 
 
 public class JavaConfig implements Config{
 
+    @Getter
     private Reflections scanner;
     private Map<Class,Class> infc2ImplClass;
 
