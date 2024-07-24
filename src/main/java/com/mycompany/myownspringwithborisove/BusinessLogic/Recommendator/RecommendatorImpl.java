@@ -4,7 +4,8 @@ import com.mycompany.myownspringwithborisove.Infrastructure.Annotations.InjectPr
 import com.mycompany.myownspringwithborisove.Infrastructure.Annotations.Singleton;
 
 
-@Singleton(loadingPolicy = Singleton.LoadingPolicy.LAZY)
+@Singleton
+@Deprecated
 public class RecommendatorImpl implements Recommendator {
 
     @InjectProperty

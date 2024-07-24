@@ -1,4 +1,4 @@
-package com.mycompany.myownspringwithborisove.Infrastructure.Configurators;
+package com.mycompany.myownspringwithborisove.Infrastructure.Configurators.ObjectConfigurators;
 
 import com.mycompany.myownspringwithborisove.Infrastructure.ApplicationContext;
 

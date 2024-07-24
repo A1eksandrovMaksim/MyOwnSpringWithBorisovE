@@ -2,7 +2,8 @@ package com.mycompany.myownspringwithborisove.Infrastructure;
 
 import java.util.List;
 import lombok.SneakyThrows;
-import com.mycompany.myownspringwithborisove.Infrastructure.Configurators.ObjectConfigurator;
+import com.mycompany.myownspringwithborisove.Infrastructure.Configurators.ObjectConfigurators.ObjectConfigurator;
+import com.mycompany.myownspringwithborisove.Infrastructure.Configurators.ProxyConfigurator.ProxyConfigurator;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import javax.annotation.PostConstruct;
@@ -12,18 +13,27 @@ import javax.annotation.PostConstruct;
 public class ObjectFactory {
     
     private final ApplicationContext context;
-    private List<ObjectConfigurator> configurators = new ArrayList<>();
+    private List<ObjectConfigurator> objectConfigurators = new ArrayList<>();
+    private List<ProxyConfigurator> proxyConfigurators = new ArrayList<>();
     
     
     @SneakyThrows
     public ObjectFactory(ApplicationContext context){
         this.context = context;
         
-        var configClasses = context.getConfig()
-                            .getScanner()
-                            .getSubTypesOf(ObjectConfigurator.class);
-        for(var configClass : configClasses){
-            configurators.add(configClass.getDeclaredConstructor().newInstance());
+        
+        for(var configClass : context.getConfig()
+                                    .getScanner()
+                                    .getSubTypesOf(ObjectConfigurator.class))
+        {
+            objectConfigurators.add(configClass.getDeclaredConstructor().newInstance());
+        }
+        
+        for(var configClass : context.getConfig()
+                                    .getScanner()
+                                    .getSubTypesOf(ProxyConfigurator.class))
+        {
+            proxyConfigurators.add(configClass.getDeclaredConstructor().newInstance());
         }
     }
     
@@ -33,7 +43,15 @@ public class ObjectFactory {
         T t = create(implClass);
         configure(t);
         invokeInit(t);
+        t = wrapWithProxy(t, implClass);
         
+        return t;
+    }
+
+    private <T> T wrapWithProxy(T t, Class<T> implClass) {
+        for(var configurator : proxyConfigurators){
+            t = (T) configurator.replaceWithProxy(t, implClass);
+        }
         return t;
     }
 
@@ -46,7 +64,7 @@ public class ObjectFactory {
     }
 
     private <T> void configure(T t) {
-        for(var configurator : configurators){
+        for(var configurator : objectConfigurators){
             configurator.configure(t, context);
         }
     }
