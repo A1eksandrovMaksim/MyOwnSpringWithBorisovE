@@ -4,13 +4,17 @@ import com.mycompany.myownspringwithborisove.Infrastructure.Annotations.Singleto
 import com.mycompany.myownspringwithborisove.Infrastructure.Config.Config;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import lombok.Getter;
+import lombok.Setter;
 
 
 
 public class ApplicationContext {
     
+    @Setter
     private ObjectFactory factory;
     private Map<Class, Object> cache = new ConcurrentHashMap<>();
+    @Getter
     private Config config;
 
     public ApplicationContext(Config config) {

@@ -2,6 +2,7 @@ package com.mycompany.myownspringwithborisove.Infrastructure.Configurators;
 
 import com.mycompany.myownspringwithborisove.Infrastructure.Configurators.ObjectConfigurator;
 import com.mycompany.myownspringwithborisove.Infrastructure.Annotations.InjectProperty;
+import com.mycompany.myownspringwithborisove.Infrastructure.ApplicationContext;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Map;
@@ -30,7 +31,7 @@ public class InjectPropertyAnnotationObjectConfigurator implements ObjectConfigu
     
     @Override
     @SneakyThrows
-    public void configure(Object t) {
+    public void configure(Object t, ApplicationContext context) {
         
         Class<?> implClass = t.getClass();
         

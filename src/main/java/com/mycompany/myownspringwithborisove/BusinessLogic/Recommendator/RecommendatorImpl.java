@@ -1,11 +1,10 @@
 package com.mycompany.myownspringwithborisove.BusinessLogic.Recommendator;
 
-import com.mycompany.myownspringwithborisove.BusinessLogic.Recommendator.Recommendator;
 import com.mycompany.myownspringwithborisove.Infrastructure.Annotations.InjectProperty;
 import com.mycompany.myownspringwithborisove.Infrastructure.Annotations.Singleton;
 
 
-@Singleton 
+@Singleton(loadingPolicy = Singleton.LoadingPolicy.LAZY)
 public class RecommendatorImpl implements Recommendator {
 
     @InjectProperty
