@@ -1,7 +1,7 @@
 package com.mycompany.myownspringwithborisove;
 
 
-
+@Singleton 
 public class RecommendatorImpl implements Recommendator {
 
     @InjectProperty

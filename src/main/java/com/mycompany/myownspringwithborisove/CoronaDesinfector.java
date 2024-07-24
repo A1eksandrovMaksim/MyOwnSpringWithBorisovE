@@ -4,13 +4,11 @@ package com.mycompany.myownspringwithborisove;
 
 public class CoronaDesinfector {
     
-    private Announcer announcer = 
-            ObjectFactory.getInstance()
-                    .createObject(Announcer.class);
+    @InjectByType
+    private Announcer announcer;
     
-    private Policeman policeman = 
-            ObjectFactory.getInstance()
-                    .createObject(Policeman.class);
+    @InjectByType
+    private Policeman policeman;
     
     public void start(Room room){
         announcer.announce("Всем выйти! Начинается дезинфекия.");
