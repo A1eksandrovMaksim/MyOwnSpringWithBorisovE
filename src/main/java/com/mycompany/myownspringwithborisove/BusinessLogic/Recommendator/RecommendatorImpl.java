@@ -5,7 +5,6 @@ import com.mycompany.myownspringwithborisove.Infrastructure.Annotations.Singleto
 
 
 @Singleton
-@Deprecated
 public class RecommendatorImpl implements Recommendator {
 
     @InjectProperty
