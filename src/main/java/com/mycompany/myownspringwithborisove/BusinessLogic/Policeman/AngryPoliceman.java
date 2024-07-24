@@ -1,4 +1,4 @@
-package com.mycompany.myownspringwithborisove;
+package com.mycompany.myownspringwithborisove.BusinessLogic.Policeman;
 
 
 

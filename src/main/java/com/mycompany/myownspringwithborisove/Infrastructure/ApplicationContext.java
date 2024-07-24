@@ -1,4 +1,4 @@
-package com.mycompany.myownspringwithborisove;
+package com.mycompany.myownspringwithborisove.Infrastructure;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

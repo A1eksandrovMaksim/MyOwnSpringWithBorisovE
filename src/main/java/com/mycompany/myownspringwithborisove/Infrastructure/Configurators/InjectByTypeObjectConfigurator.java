@@ -1,5 +1,8 @@
-package com.mycompany.myownspringwithborisove;
+package com.mycompany.myownspringwithborisove.Infrastructure.Configurators;
 
+import com.mycompany.myownspringwithborisove.Infrastructure.ObjectFactory;
+import com.mycompany.myownspringwithborisove.Infrastructure.Configurators.ObjectConfigurator;
+import com.mycompany.myownspringwithborisove.Infrastructure.Annotations.InjectByType;
 import lombok.SneakyThrows;
 
 

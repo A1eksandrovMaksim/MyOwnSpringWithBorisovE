@@ -1,4 +1,8 @@
-package com.mycompany.myownspringwithborisove;
+package com.mycompany.myownspringwithborisove.BusinessLogic;
+
+import com.mycompany.myownspringwithborisove.BusinessLogic.Announcer.Announcer;
+import com.mycompany.myownspringwithborisove.Infrastructure.Annotations.InjectByType;
+import com.mycompany.myownspringwithborisove.BusinessLogic.Policeman.Policeman;
 
 
 

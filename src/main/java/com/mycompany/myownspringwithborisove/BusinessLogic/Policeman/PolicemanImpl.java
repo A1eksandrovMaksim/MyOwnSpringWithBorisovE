@@ -1,4 +1,6 @@
-package com.mycompany.myownspringwithborisove;
+package com.mycompany.myownspringwithborisove.BusinessLogic.Policeman;
+
+import com.mycompany.myownspringwithborisove.BusinessLogic.Policeman.Policeman;
 
 
 

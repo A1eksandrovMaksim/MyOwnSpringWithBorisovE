@@ -1,10 +1,14 @@
-package com.mycompany.myownspringwithborisove;
+package com.mycompany.myownspringwithborisove.Infrastructure;
 
+import com.mycompany.myownspringwithborisove.BusinessLogic.Policeman.PolicemanImpl;
+import com.mycompany.myownspringwithborisove.BusinessLogic.Policeman.Policeman;
+import com.mycompany.myownspringwithborisove.Infrastructure.Config.Config;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import lombok.SneakyThrows;
-import com.mycompany.myownspringwithborisove.ObjectConfigurator;
+import com.mycompany.myownspringwithborisove.Infrastructure.Configurators.ObjectConfigurator;
+import com.mycompany.myownspringwithborisove.Infrastructure.Config.JavaConfig;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 

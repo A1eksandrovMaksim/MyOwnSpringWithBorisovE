@@ -1,4 +1,4 @@
-package com.mycompany.myownspringwithborisove;
+package com.mycompany.myownspringwithborisove.Infrastructure.Config;
 
 import org.reflections.Reflections;
 

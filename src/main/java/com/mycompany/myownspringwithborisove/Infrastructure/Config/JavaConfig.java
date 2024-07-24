@@ -1,5 +1,6 @@
-package com.mycompany.myownspringwithborisove;
+package com.mycompany.myownspringwithborisove.Infrastructure.Config;
 
+import com.mycompany.myownspringwithborisove.Infrastructure.Config.Config;
 import java.util.Map;
 import java.util.Set;
 import lombok.Getter;

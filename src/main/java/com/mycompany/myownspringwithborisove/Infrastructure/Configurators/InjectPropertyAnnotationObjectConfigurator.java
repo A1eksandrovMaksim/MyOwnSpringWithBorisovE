@@ -1,5 +1,7 @@
-package com.mycompany.myownspringwithborisove;
+package com.mycompany.myownspringwithborisove.Infrastructure.Configurators;
 
+import com.mycompany.myownspringwithborisove.Infrastructure.Configurators.ObjectConfigurator;
+import com.mycompany.myownspringwithborisove.Infrastructure.Annotations.InjectProperty;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Map;
